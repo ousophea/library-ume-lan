@@ -1,0 +1,362 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    font-size: 12px;
+}
+a{
+    color: #333;
+}
+
+#logo{
+    height: 45px;
+    position: relative;
+    top: -13px;
+}
+#logo-title{
+    position: relative;
+    top: -6px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/*
+ * nav top
+ */
+.navbar{
+    box-shadow: 0px 0px 1px rgb(199, 199, 199);
+}
+.navbar-inverse {
+    /*    background-color: #428bca;
+        border-color: #0966AF;
+        color: white;*/
+    background-color: #f1f1f1;
+    border-color: #D5D5D5;
+    color:#777777;
+}
+.navbar-inverse .navbar-brand {
+    color:#E6A437;
+}
+.navbar-inverse .navbar-brand:hover {
+    color: #EBB65C;
+}
+/*.navbar-inverse .navbar-nav > li > a{
+    color: #EBB65C;
+}*/
+.navbar-inverse .navbar-nav > li > a:hover{
+    color:#404040;
+}
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle {
+    background-color: #EBB65C;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #E6A437;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #E6A437;
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+@media (min-width: 767px) {
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #FDFDFD;
+        border-right: 1px solid #C7C7C7;
+    }
+}
+
+/* Sidebar navigation */
+
+.toolbar{
+    border-bottom: 1px solid rgb(233, 233, 233);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: fixed;
+    /*width: 100%;*/
+    margin-left: -10px;
+    padding-left: 10px;
+    z-index: 1000;
+    background: #fff;
+}
+.sidebar{
+    top: 50px;
+    padding-top: 5px;
+}
+.sidebar-head{
+    position: relative;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    margin-left: -5px;
+}
+.toolbar .main{
+    padding-left: 0px;
+}
+.sidebar-head h1, .sidebar-head h2, .sidebar-head h3, .sidebar-head h4, .sidebar-head h5, .sidebar-head h6{
+    margin: 0px;
+    font-size: 20px;
+    padding-top: 4px;
+    color: #E6A437;
+}
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-sidebar > li > a {
+    padding-right: 10px;
+    padding-left: 20px;
+}
+.nav-sidebar > li > a:hover {
+    color: #333;
+    background-color: #F5F5F5;
+}
+.nav-sidebar > .active > a {
+    color: #333;
+    background-color: #F5F5F5;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 15px;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 5px 10px;
+    padding-top: 0px;
+}
+/*@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}*/
+.main .page-header {
+    margin-top: 0;
+}
+
+.content .panel .panel-heading {
+	position: relative;
+}
+
+.content .panel .panel-heading .btn {
+	top: 6px;
+	right: 15px;
+	position: absolute;
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.placeholders h4 {
+    margin-bottom: 0;
+}
+.placeholder {
+    margin-bottom: 20px;
+}
+.placeholder img {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+h4{
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.change-icon{
+    position: absolute;
+    left: 0;
+    top: 38px;
+    display: none;
+}
+
+.app:hover .change-icon{
+    display: block;
+}
+.icon-top{
+    font-size: 24px;
+    padding: 11px !important;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+    background-color: #E6A437;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #333 !important;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+        background-color: #84B2EC;
+    }
+
+    .dropdown-header {
+        color: #333;
+    }
+    .menu-left{display: block !important;}
+    .sidebar-head{right: 0px;}
+    .toolbar .main, .content{
+        padding-left: 15px;
+    }
+}
+.nav>li.menu-left{display: none;}
+
+
+.main .content{
+    position: relative;
+    top: 50px;
+}
+
+
+/*================ Table =================*/
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 2px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: left;
+    border-top: 1px solid #ddd;
+}
+/*================= End Teable ==============*/
+
+/*============== Sidebar ====================*/
+.divider{
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.sidebar-header{
+    display: block;
+    padding: 3px 20px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #999;
+}
+
+/*=============== End sidebar ===============*/
+
+.right{
+    float: right;
+}
+.left{float: left;}
+.filter{padding-bottom: 10px;}
+dt, dd {
+    line-height: 30px;
+}
+
+/*============= Message ==================*/
+.alert{
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-right: 30px;
+}
+
+/*=========== Coloer ============*/
+h1, h2, h3, h4, h5{
+    color: #E6A437;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 4px;
+}
+
+/*Background color*/
+
+/*Text color*/
+
+/*Border color*/
+
+/*---------------------------------*/
+
+/*====== Error ==========*/
+.error {
+	color: red;
+	padding-left: 10px;
+}
+
+.bs-glyphicons {
+    margin-left: 0;
+    margin-right: 0;
+}
+.bs-glyphicons {
+    margin: 0 -10px 20px;
+    overflow: hidden;
+}
+.bs-glyphicons-list {
+    list-style: none outside none;
+    padding-left: 0;
+}
+.bs-glyphicons .glyphicon-class {
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+}
+.bs-glyphicons .glyphicon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.bs-glyphicons li {
+    font-size: 12px;
+    width: 12.5%;
+}
+.bs-glyphicons li {
+    background-color: #F9F9F9;
+    border: 1px solid #FFFFFF;
+    float: left;
+    font-size: 14px;
+    height: 115px;
+    line-height: 1.4;
+    padding: 10px;
+    text-align: center;
+    width: 25%;
+}
+.bs-glyphicons li:hover {
+    background-color: #563D7C;
+    color: #FFFFFF;
+}
+.bs-glyphicons a:hover {
+    color: #FFFFFF;
+}
+.bs-glyphicons li:hover a {
+    color: #FFFFFF;
+}
