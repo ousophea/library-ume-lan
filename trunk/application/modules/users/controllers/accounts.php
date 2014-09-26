@@ -85,9 +85,9 @@ class Accounts extends CI_Controller {
     }
     
         function profile() {
-//        $user = $this->session->userdata('user');
-//        $id = $user['use_id'];
-            $id = 1;
+        $user = $this->session->userdata('user');
+        $id = $user['use_id'];
+//            $id = 1;
         
         $this->data['title'] = 'Profile';
         $this->data['content'] = 'users/accounts/profile';
