@@ -15,7 +15,8 @@
 |
 */
 //$config['base_url']	= 'http://library.ume.lan/';
-$config['base_url']	= 'http://192.168.77.2/library.ume.lan/';
+//$config['base_url']	= 'http://192.168.77.2/library.ume.lan/';
+$config['base_url']	= 'http://library.ume-kpc.local/';
 /*
 |--------------------------------------------------------------------------
 | Index File
