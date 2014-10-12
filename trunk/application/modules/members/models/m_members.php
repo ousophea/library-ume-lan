@@ -6,8 +6,6 @@ if (!defined('BASEPATH'))
 class M_Members extends CI_Model {
 
     function findAllAccounts($num_row, $from_row) {
-        $this->db->order_by('use_id', 'desc');
-
         if ($this->input->post('use_name') != '') {
             $this->db->like('use_name', $this->input->post('use_name'));
         }
@@ -36,7 +34,8 @@ class M_Members extends CI_Model {
             $this->db->where('use_gro_id', $this->session->userdata('use_gro_id'));
         }
         //-----------------------
-$this->db->where('use_gro_id', '4'); // select only borrower
+        $this->db->order_by('use_ac_id', 'asc');
+        $this->db->where('use_gro_id', '4'); // select only borrower
         $this->db->limit($num_row, $from_row);
         $this->db->from(TABLE_PREFIX . 'users');
         $this->db->join(TABLE_PREFIX . 'groups', 'use_gro_id=gro_id', 'left');
@@ -56,7 +55,7 @@ $this->db->where('use_gro_id', '4'); // select only borrower
         if ($this->session->userdata('use_status') != '') {
             $this->db->where('use_status', $this->session->userdata('use_status'));
         }
-                // Keep pagination for filter status
+        // Keep pagination for filter status
         if ($this->input->post('use_name') != '') {
             $this->session->set_userdata('use_name', $this->input->post('use_name'));
         }
@@ -77,10 +76,10 @@ $this->db->where('use_gro_id', '4'); // select only borrower
 //            $this->db->where('tbl_groups_gro_id', $this->session->userdata('tbl_groups_gro_id'));
 //        }
         //-----------------------
-
+        $this->db->where('use_gro_id', '4'); // select only borrower
         $this->db->from(TABLE_PREFIX . 'users');
-        $this->db->join(TABLE_PREFIX . 'user_group', 'use_id=tbl_users_use_id');
-        $this->db->group_by('use_id');
+        $this->db->join(TABLE_PREFIX . 'groups', 'use_gro_id=gro_id', 'left');
+        $this->db->group_by('use_ac_id');
         $data = $this->db->get();
         return $data->num_rows();
     }
