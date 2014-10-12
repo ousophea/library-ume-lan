@@ -39,8 +39,10 @@
                 <tr>
                     <th><input type="checkbox" class="checkall" /></th>
                     <th>Member name</th>
-                    <th>Email</th>
-                    <th>Group</th>
+                    <th>Gender</th>
+                    <th>AC ID</th>
+                    <th>Institution</th>
+                    <th>Position</th>
                     <th>Mobile</th>
                     <th>Address</th>
                     <th>Status</th>
@@ -52,8 +54,11 @@
                         <tr>
                             <td><input type="checkbox" name="id[]" value="<?php $row['use_id'] ?>" class="checkid" /></td>
                             <td><?php echo $row['use_name']; ?></td>
-                            <td><?php echo $row['use_email']; ?></td>
-                            <td><?php echo $row['gro_name']; ?></td>
+                             <td><?php echo $row['use_sex']; ?></td>
+                            <!--<td><?php echo $row['use_ac_id']; ?></td>-->
+                             <td><?php echo sprintf( "%06d", $row['use_ac_id']); ?></td>
+                            <td><?php echo $row['use_institution']; ?></td>
+                             <td><?php echo $row['use_position']; ?></td>
                             <td><?php echo $row['use_tel']; ?></td>
                             <td><?php echo $row['use_address']; ?></td>
                             <td><?php echo status_string($row['use_status']); ?></td>
@@ -75,7 +80,7 @@
 
                     <?php } ?>
                 <?php } else { ?>
-                    <tr><td colspan="7">Empty</td></tr>
+                    <tr><td colspan="10">Empty</td></tr>
                 <?php } ?>
             </table>
         </div>
